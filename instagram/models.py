@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Post(models.Model):
+    objects = models.Manager()
     message = models.TextField()
     photo = models.ImageField(blank=True, upload_to='instagram/post/%Y/%m/%d')
     is_public = models.BooleanField(default=False, verbose_name="공개여부")
